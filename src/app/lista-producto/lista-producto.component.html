@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col" style="margin: auto; width: 80%">
+            <h1>Lista de Productos</h1> 
+        </div>
+    </div>
+  </div>
+  
+
+<div style=" margin: auto; width: 80%">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla1 style="width: 90%;margin-bottom: 1rem;">
+    
+        <ng-container matColumnDef="idlistaDeProductos">
+          <th mat-header-cell *matHeaderCellDef> Id Requisicion </th>
+          <td mat-cell *matCellDef="let listaDeProductos">{{listaDeProductos.idlistaDeProductos}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cantidad">
+          <th mat-header-cell *matHeaderCellDef>  Cantidad </th>
+          <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.cantidad}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="productos">
+            <th mat-header-cell *matHeaderCellDef>  Productos </th>
+            <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.productos}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unidadDeMedida">
+            <th mat-header-cell *matHeaderCellDef>  Unidad de medida </th>
+            <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.unidadDeMedida}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="precioDeProducto">
+          <th mat-header-cell *matHeaderCellDef>  precioDeProducto </th>
+          <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.precioDeProducto}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="critico">
+        <th mat-header-cell *matHeaderCellDef>  Critico </th>
+        <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.critico}} </td>
+      </ng-container>
+    
+        <ng-container matColumnDef="idproductos">
+          <th mat-header-cell *matHeaderCellDef> Id Productos </th>
+          <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.idproductos}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="idrequisicion">
+          <th mat-header-cell *matHeaderCellDef> Id Requisicion </th>
+          <td mat-cell *matCellDef="let listaDeProductos"> {{listaDeProductos.idrequisicion}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+      <mat-paginator [length]="100"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page">
+    </mat-paginator>
+</div>

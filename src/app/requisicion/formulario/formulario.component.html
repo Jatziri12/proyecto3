@@ -1,0 +1,28 @@
+<div>
+    <h1 mat-dialog-title>Requisicion</h1>
+    <div mat-dialog-content>
+      <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="data.idrequisicion" type="number" placeholder="Ingrese Id">
+      </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.fecha" type="string" placeholder="Ingrese fecha">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.prioridad" type="number" placeholder="Ingrese prioridad">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="data.idusuario" type="number" placeholder="Ingrese IdUsuario">
+      </mat-form-field>
+
+      </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+    </div>
+</div>

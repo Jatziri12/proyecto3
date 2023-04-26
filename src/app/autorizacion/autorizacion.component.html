@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+      <div class="col" style="margin: auto; width: 80%">
+          <h1>Autorizacion</h1> 
+      </div>
+  </div>
+</div>
+<div style=" margin: auto; width: 80%">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla1 style="width: 90%;margin-bottom: 1rem;">
+        
+        <ng-container matColumnDef="idautorizacion">
+          <th mat-header-cell *matHeaderCellDef> Cantidad total </th>
+          <td mat-cell *matCellDef="let autorizacion">{{autorizacion.idautorizacion}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let autorizacion"> {{autorizacion.fecha}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cantidadProducto">
+          <th mat-header-cell *matHeaderCellDef> Cantidad producto </th>
+          <td mat-cell *matCellDef="let autorizacion"> {{autorizacion.cantidadProducto}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef> total </th>
+          <td mat-cell *matCellDef="let autorizacion"> {{autorizacion.total}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idusuario">
+          <th mat-header-cell *matHeaderCellDef> Id Usuario </th>
+          <td mat-cell *matCellDef="let autorizacion"> {{autorizacion.idusuario}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="borrar">
+          <th mat-header-cell *matHeaderCellDef> Borrar </th>
+          <td mat-cell *matCellDef="let j = index;">
+            <button mat-raised-button color="warn" focusable="false" (click)="borrarFila(j)">
+              Borra
+            </button>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="columna"></tr>
+        <tr mat-row *matRowDef="let row; columns: columna;"></tr>
+      </table>
+    
+      <mat-paginator [length]="100"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page">
+    </mat-paginator>
+</div>
