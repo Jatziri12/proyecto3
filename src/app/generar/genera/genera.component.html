@@ -1,0 +1,27 @@
+<div>
+    <h1 mat-dialog-title>Genera 1{{idDocumento}}</h1>
+    <a routerLink="/generar/{{idDocumento}}"></a>
+    <div mat-dialog-content>
+      <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.cantidadTotal" type="string" placeholder="Ingrese cantidad total">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.cantidadProducto" type="string" placeholder="Ingrese cantidad de producto">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.cantidadM" type="string" placeholder="Ingrese cantidad m">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.medida" type="string" placeholder="Ingrese medida">
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+    </div>
+</div>

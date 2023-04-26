@@ -1,0 +1,36 @@
+<div>
+    <h1 mat-dialog-title>Presupuesto</h1>
+    <div mat-dialog-content>
+      <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.articulo" type="string" placeholder="Ingrese articulo">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.cantidad" type="number" placeholder="Ingrese cantidad">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.codigogasto" type="number" placeholder="Ingrese codigo de gasto">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.existencia" type="number" placeholder="Ingrese existencia">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.descripcion" type="string" placeholder="Ingrese descripcion">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.fechasolicitud" type="string" placeholder="Ingrese fecha de solicitud">
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+    </div>
+</div>
